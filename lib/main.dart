@@ -25,7 +25,7 @@ class DicePage extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.fromLTRB(20.0, 20.0, 10.0, 20.0),
               child: Image.asset(
                 'images/dice1.png',
               ),
@@ -33,7 +33,7 @@ class DicePage extends StatelessWidget {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.fromLTRB(20.0, 20.0, 10.0, 20.0),
               child: Image.asset(
                 'images/dice2.png',
               ),
