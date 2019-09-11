@@ -1,10 +1,10 @@
-name: Roll the Dice
+name: roll_the_dice
 description: A new Flutter application.
 
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -15,6 +15,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
 
 flutter:
 
