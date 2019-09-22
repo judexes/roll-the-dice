@@ -35,8 +35,10 @@ class _DicePageState extends State<DicePage> {
   }
   Random leftRandom;
   int min = 1;
-  int max = 6;
+  int max = 7;
   Random rightRandom;
+  int leftMin = 1;
+  int rightMax = 7;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -50,7 +52,7 @@ class _DicePageState extends State<DicePage> {
                   print('dice number = $leftDiceNumber');
                   leftRandom = new Random();
                   leftDiceNumber = min + leftRandom.nextInt(max - min);
-                  print("$leftDiceNumber is in the range of $min and $max");
+                  print("Left $leftDiceNumber is in the range of $min and $max");
                 });
               },
               child: Image.asset('images/dice$leftDiceNumber.png'),
@@ -60,14 +62,14 @@ class _DicePageState extends State<DicePage> {
             child: FlatButton(
               onPressed: () {
                 setState(() {
-                  rightDiceNumber = 3;
+                  rightDiceNumber = 6;
                   print('dice number = $rightDiceNumber');
                   rightRandom = new Random();
-                  rightDiceNumber = min + rightRandom.nextInt(max - min);
-                  print("$rightDiceNumber is in the range of $min and $max");
+                  rightDiceNumber = leftMin + rightRandom.nextInt(rightMax - leftMin);
+                  print("Right: $rightDiceNumber is in the range of $leftMin and $rightMax");
                 });
               },
-              child: Image.asset('images/dice$leftDiceNumber.png'),
+              child: Image.asset('images/dice$rightDiceNumber.png'),
             ),
           ),
         ],
