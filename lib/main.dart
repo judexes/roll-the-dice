@@ -87,7 +87,6 @@ class _DicePageState extends State<DicePage> {
               ),
             ],
           ),
-
           Expanded(
             child: FlatButton(
               onPressed: () {
