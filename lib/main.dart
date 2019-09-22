@@ -48,13 +48,31 @@ class _DicePageState extends State<DicePage> {
             children: <Widget>[
               Expanded(
                 child: FlatButton(
-                  onPressed: null,
+                  onPressed: () {
+                    setState(() {
+                      leftDiceNumber = 3;
+                      print('dice number = $leftDiceNumber');
+                      leftRandom = new Random();
+                      rightDiceNumber = leftMin + rightRandom.nextInt(rightMax - leftMin);
+                      leftDiceNumber = min + leftRandom.nextInt(max - min);
+                      print("Left $leftDiceNumber is in the range of $min and $max");
+                    });
+                  },
                   child: Image.asset('images/dice$leftDiceNumber.png'),
                 ),
               ),
               Expanded(
                 child: FlatButton(
-                  onPressed: null,
+                  onPressed: () {
+                    setState(() {
+                      rightDiceNumber = 6;
+                      print('dice number = $rightDiceNumber');
+                      rightRandom = new Random();
+                      leftDiceNumber = min + leftRandom.nextInt(max - min);
+                      rightDiceNumber = leftMin + rightRandom.nextInt(rightMax - leftMin);
+                      print("Right: $rightDiceNumber is in the range of $leftMin and $rightMax");
+                    });
+                  },
                   child: Image.asset('images/dice$rightDiceNumber.png'),
                 ),
               ),
@@ -67,12 +85,14 @@ class _DicePageState extends State<DicePage> {
               setState(() {
                 leftDiceNumber = min + leftRandom.nextInt(max - min);
                 rightDiceNumber = leftMin + rightRandom.nextInt(rightMax - leftMin);
-                print("Right: $rightDiceNumber is in the range of $leftMin and $rightMax");
+                print("Right: $rightDiceNumber");
+                print("Right: $leftDiceNumber");
+                print("---------------");
               });
             },
             child: const Text(
-                'Enabled Button',
-                style: TextStyle(fontSize: 20)
+                'Roll the dice',
+                style: TextStyle(fontSize: 35)
             ),
           ),
         ],
