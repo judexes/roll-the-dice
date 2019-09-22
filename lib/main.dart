@@ -48,58 +48,31 @@ class _DicePageState extends State<DicePage> {
             children: <Widget>[
               Expanded(
                 child: FlatButton(
-                  onPressed: () {
-                    setState(() {
-                      rightDiceNumber = leftMin + rightRandom.nextInt(rightMax - leftMin);
-                      leftDiceNumber = min + leftRandom.nextInt(max - min);
-                      print("Left $leftDiceNumber is in the range of $min and $max");
-                    });
-                  },
+                  onPressed: null,
                   child: Image.asset('images/dice$leftDiceNumber.png'),
                 ),
               ),
               Expanded(
                 child: FlatButton(
-                  onPressed: () {
-                    setState(() {
-                      leftDiceNumber = min + leftRandom.nextInt(max - min);
-                      rightDiceNumber = leftMin + rightRandom.nextInt(rightMax - leftMin);
-                      print("Right: $rightDiceNumber is in the range of $leftMin and $rightMax");
-                    });
-                  },
-                  child: Image.asset('images/dice$rightDiceNumber.png'),
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  onPressed: () {
-                    setState(() {
-                      rightDiceNumber = 6;
-                      print('dice number = $rightDiceNumber');
-                      rightRandom = new Random();
-                      leftDiceNumber = min + leftRandom.nextInt(max - min);
-                      rightDiceNumber = leftMin + rightRandom.nextInt(rightMax - leftMin);
-                      print("Right: $rightDiceNumber is in the range of $leftMin and $rightMax");
-                    });
-                  },
+                  onPressed: null,
                   child: Image.asset('images/dice$rightDiceNumber.png'),
                 ),
               ),
             ],
           ),
-          Expanded(
-            child: FlatButton(
-              onPressed: () {
-                setState(() {
-                  rightDiceNumber = 6;
-                  print('dice number = $rightDiceNumber');
-                  rightRandom = new Random();
-                  leftDiceNumber = min + leftRandom.nextInt(max - min);
-                  rightDiceNumber = leftMin + rightRandom.nextInt(rightMax - leftMin);
-                  print("Right: $rightDiceNumber is in the range of $leftMin and $rightMax");
-                });
-              },
-              child: Image.asset('images/dice$rightDiceNumber.png'),
+
+          const SizedBox(height: 30),
+          RaisedButton(
+            onPressed: () {
+              setState(() {
+                leftDiceNumber = min + leftRandom.nextInt(max - min);
+                rightDiceNumber = leftMin + rightRandom.nextInt(rightMax - leftMin);
+                print("Right: $rightDiceNumber is in the range of $leftMin and $rightMax");
+              });
+            },
+            child: const Text(
+                'Enabled Button',
+                style: TextStyle(fontSize: 20)
             ),
           ),
         ],
