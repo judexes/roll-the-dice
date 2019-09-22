@@ -51,6 +51,7 @@ class _DicePageState extends State<DicePage> {
                   leftDiceNumber = 3;
                   print('dice number = $leftDiceNumber');
                   leftRandom = new Random();
+                  rightDiceNumber = leftMin + rightRandom.nextInt(rightMax - leftMin);
                   leftDiceNumber = min + leftRandom.nextInt(max - min);
                   print("Left $leftDiceNumber is in the range of $min and $max");
                 });
@@ -65,6 +66,7 @@ class _DicePageState extends State<DicePage> {
                   rightDiceNumber = 6;
                   print('dice number = $rightDiceNumber');
                   rightRandom = new Random();
+                  leftDiceNumber = min + leftRandom.nextInt(max - min);
                   rightDiceNumber = leftMin + rightRandom.nextInt(rightMax - leftMin);
                   print("Right: $rightDiceNumber is in the range of $leftMin and $rightMax");
                 });
