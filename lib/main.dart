@@ -34,8 +34,10 @@ class _DicePageState extends State<DicePage> {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Expanded(
                 child: FlatButton(
@@ -52,7 +54,7 @@ class _DicePageState extends State<DicePage> {
             ],
           ),
 
-          const SizedBox(height: 30),
+          const SizedBox(height: 100),
           RaisedButton(
             onPressed: () {
               setState(() {
