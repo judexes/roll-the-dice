@@ -34,8 +34,10 @@ class _DicePageState extends State<DicePage> {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Expanded(
                 child: FlatButton(
@@ -52,31 +54,17 @@ class _DicePageState extends State<DicePage> {
             ],
           ),
 
-          const SizedBox(height: 30),
+          const SizedBox(height: 100),
           RaisedButton(
             onPressed: () {
               setState(() {
                 numRandom = new Random();
                 leftDiceNumber = min + numRandom.nextInt(max - min);
                 rightDiceNumber = min + numRandom.nextInt(max - min);
-                print("Left: $leftDiceNumber");
                 print("Right: $rightDiceNumber");
+                print("Right: $leftDiceNumber");
                 print("---------------");
               });
-
-              int newLeftDiceNumber = leftDiceNumber;
-              int newRightDiceNumber = rightDiceNumber;
-
-              if ((newLeftDiceNumber == rightDiceNumber) || (newRightDiceNumber == rightDiceNumber)) {
-                numRandom = new Random();
-                leftDiceNumber = min + numRandom.nextInt(max - min);
-                rightDiceNumber = min + numRandom.nextInt(max - min);
-                print("Left: $leftDiceNumber");
-                print("Right: $rightDiceNumber");
-                print("---------------");
-                print("---------------");
-              } else if (newRightDiceNumber == rightDiceNumber){
-              }
             },
             child: const Text(
                 'Roll the dice',
