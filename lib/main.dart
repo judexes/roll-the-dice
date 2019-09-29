@@ -26,10 +26,21 @@ class DicePage extends StatefulWidget {
 class _DicePageState extends State<DicePage> {
   int leftDiceNumber = 1;
   int rightDiceNumber =6;
-
   Random numRandom;
   int min = 1;
   int max = 7;
+
+  void changeDiceFace () {
+    setState(() {
+      numRandom = new Random();
+      leftDiceNumber = min + numRandom.nextInt(max - min);
+      rightDiceNumber = min + numRandom.nextInt(max - min);
+      print("Right: $rightDiceNumber");
+      print("Left: $leftDiceNumber");
+      print("---------------");
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -57,14 +68,7 @@ class _DicePageState extends State<DicePage> {
           const SizedBox(height: 250),
           RaisedButton(
             onPressed: () {
-              setState(() {
-                numRandom = new Random();
-                leftDiceNumber = min + numRandom.nextInt(max - min);
-                rightDiceNumber = min + numRandom.nextInt(max - min);
-                print("Right: $rightDiceNumber");
-                print("Right: $leftDiceNumber");
-                print("---------------");
-              });
+              changeDiceFace();
             },
             child: const Text(
                 'Roll the dice',
