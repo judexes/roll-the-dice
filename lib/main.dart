@@ -65,7 +65,6 @@ class _DicePageState extends State<DicePage> {
               ),
             ],
           ),
-
           const SizedBox(height: 250),
 
           RaisedButton(
