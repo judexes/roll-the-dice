@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'dart:math';
 void main() {
@@ -37,11 +39,9 @@ class _DicePageState extends State<DicePage> {
       rightDiceNumber = min + numRandom.nextInt(max - min);
       print("Right: $rightDiceNumber");
       print("Left: $leftDiceNumber");
-
       print("---------------");
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -80,4 +80,3 @@ class _DicePageState extends State<DicePage> {
     );
   }
 }
-
