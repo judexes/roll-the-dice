@@ -37,6 +37,7 @@ class _DicePageState extends State<DicePage> {
       rightDiceNumber = min + numRandom.nextInt(max - min);
       print("Right: $rightDiceNumber");
       print("Left: $leftDiceNumber");
+
       print("---------------");
     });
   }
