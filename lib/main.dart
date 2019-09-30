@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'dart:math';
 void main() {
@@ -58,6 +56,7 @@ class _DicePageState extends State<DicePage> {
                   child: Image.asset('images/dice$leftDiceNumber.png'),
                 ),
               ),
+
               Expanded(
                 child: FlatButton(
                   onPressed: null,
@@ -66,7 +65,9 @@ class _DicePageState extends State<DicePage> {
               ),
             ],
           ),
+
           const SizedBox(height: 250),
+
           RaisedButton(
             onPressed: () {
               changeDiceFace();
@@ -76,6 +77,7 @@ class _DicePageState extends State<DicePage> {
                 style: TextStyle(fontSize: 35)
             ),
           ),
+
         ],
       ),
     );
